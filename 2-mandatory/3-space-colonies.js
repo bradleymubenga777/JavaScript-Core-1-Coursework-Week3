@@ -15,7 +15,14 @@
   
 */
 
-function getSettlers() {}
+function getSettlers(families) {
+  return families.filter(function (family) {
+    const lastName = family.split(" ")[0];
+    const secondItem = family.split(" ")[1];
+
+    return secondItem === "family" && lastName.startsWith("A");
+  });
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
